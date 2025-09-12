@@ -1,10 +1,8 @@
-// Download Card V1.1  BY YASSERAGN www.yasseragn.com
-let eliteCard_countdownInterval;
+// Download Card V1.2  BY YASSERAGN www.yasseragn.com
+<script>
+    let eliteCard_countdownInterval;
     let eliteCard_allLinksData;
     
-    // ملف: howto-download-guides.js
-// وصف: كائن يحتوي على شروحات تحميل مفصّلة (عربي) لمصادر Mega4Up, UserDrive, MediaFire
-// ملاحظة: استبدل روابط الصور بالصور الفعلية لديك إن أردت.
 
 const eliteCard_howToGuides = {
   'تحميل من Mega4Up': {
@@ -70,12 +68,6 @@ const eliteCard_howToGuides = {
     ]
   }
 };
-
-// جميع النصوص الآن داخل <div dir='rtl'> لضمان عرض النص من اليمين إلى اليسار بشكل صحيح مع الكلمات الإنجليزية.
-// استبدل روابط الصور placeholders بالروابط الحقيقية لديك.
-
-
-
     
     function eliteCard_setTimer(duration, textElement, progressElement, onComplete) {
         if (!textElement || !progressElement) return;
@@ -117,6 +109,11 @@ const eliteCard_howToGuides = {
         const timerProgress = document.getElementById('initial-timer-progress');
         
         initialContainer.style.display = 'block';
+        try {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.error("AdSense Error:", e);
+        }
         nextStepBtn.style.display = 'none';
         
         eliteCard_setTimer(20, timerText, timerProgress, () => {
@@ -137,6 +134,11 @@ const eliteCard_howToGuides = {
         const timerProgress = document.getElementById('interstitial-timer-progress');
 
         interstitialContainer.style.display = 'block';
+        try {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.error("AdSense Error:", e);
+        }
 
         eliteCard_setTimer(10, timerText, timerProgress, eliteCard_showLinks);
     }
