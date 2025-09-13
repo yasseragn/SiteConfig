@@ -1,10 +1,11 @@
-// Download Card V1.3  BY YASSERAGN www.yasseragn.com
+// Download Card V1.4  BY YASSERAGN www.yasseragn.com
+    <!-- JavaScript Logic -->
+<script>
     let eliteCard_countdownInterval;
     let eliteCard_allLinksData;
     
-
-const eliteCard_howToGuides = {
-  'تحميل من Mega4Up': {
+    const eliteCard_howToGuides = {
+  'Mega4Up': {
     steps: [
       {
         text: "<div dir='rtl'><strong>الخطوة 1 — اضغط على &quot;Free Download&quot;:</strong> افتح صفحة الملف في Mega4Up ثم اضغط زر 'Free Download' أو ما يعادله. غالبًا ما تفتح تبويبات أو نوافذ إعلانية تلقائيًا؛ <strong>لا تتفاعل مع أي إعلان</strong> — أغلق النافذة/التبويب المنبثق فورًا وعد إلى التبويب الأصلي حيث صفحة Mega4Up.</div>",
@@ -29,7 +30,7 @@ const eliteCard_howToGuides = {
     ]
   },
 
-  'تحميل من UserDrive': {
+  'UserDrive': {
     steps: [
       {
         text: "<div dir='rtl'><strong>الخطوة 1 — اضغط زر التحميل:</strong> افتح صفحة الملف على UserDrive واضغط زر 'Download' أو 'Free Download'. كما في المواقع المشابهة قد تفتح نوافذ إعلانية؛ أغلقها فورًا وارجع إلى التبويب الأصلي.</div>",
@@ -50,7 +51,7 @@ const eliteCard_howToGuides = {
     ]
   },
 
-  'تحميل من MediaFire': {
+  'MediaFire': {
     steps: [
       {
         text: "<div dir='rtl'><strong>الخطوة 1 — اضغط على 'Download':</strong> في صفحة MediaFire اضغط زر 'Download' الظاهر عادةً بجانب اسم الملف. في معظم الحالات يبدأ التنزيل مباشرة أو يفتح مربع تأكيد الحفظ في المتصفح.</div>",
