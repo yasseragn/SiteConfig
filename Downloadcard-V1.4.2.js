@@ -1,5 +1,4 @@
-// Download Card V1.4.1  BY YASSERAGN www.yasseragn.com
-    <!-- JavaScript Logic -->
+// Download Card V1.4.2  BY YASSERAGN www.yasseragn.com
     let eliteCard_countdownInterval;
     let eliteCard_allLinksData;
     
