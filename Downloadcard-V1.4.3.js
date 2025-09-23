@@ -1,4 +1,5 @@
-// Download Card V1.4.2  BY YASSERAGN www.yasseragn.com
+// Download Card V1.4.3  BY YASSERAGN www.yasseragn.com
+    
     let eliteCard_countdownInterval;
     let eliteCard_allLinksData;
     
@@ -6,24 +7,24 @@
   'Mega4Up': {
     steps: [
       {
-        text: "<div dir='rtl'><strong>الخطوة 1 — اضغط على &quot;Free Download&quot;:</strong> افتح صفحة الملف في Mega4Up ثم اضغط زر 'Free Download' أو ما يعادله. غالبًا ما تفتح تبويبات أو نوافذ إعلانية تلقائيًا؛ <strong>لا تتفاعل مع أي إعلان</strong> — أغلق النافذة/التبويب المنبثق فورًا وعد إلى التبويب الأصلي حيث صفحة Mega4Up.</div>",
-        image: 'https://placehold.co/400x200/a8dadc/1d3557?text=Mega4Up+Step+1'
+        text: "<div dir='rtl'><strong>الخطوة 1 : </strong><br/>عندما تفتح صفحة التحميل سوف تجد <strong> كلمة Free Download </strong>  اضغط عليها و غالبا سوف تفتح تبويبات او نوافذ اعلانية تلقائيا  <br/><strong> لا تتفاعل مع اي اعلان و أغلق النافذة/التبويب المنبثق فورًا وعد إلى التبويب الأصلي حيث صفحة التحميل  Mega4Up </strong> </div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEji92c8JH-RTwwgOzyXHEk47Q-g5nXt0bV8aBBICTrTxyDHUSw58FXtqnkQf6QwAMXW-LpE9BGVfdUwgIJr13S5qIr98eTT1FgquIHJet2iUuEPWNQVBVuVHqq80HZJyy9GC4x3nSj0a4rcaKauYQ_nJVCbEU9KQQbN0Qg0alMzGVeNksL7FtD89BGJlviS/s1600/001.png'
       },
       {
-        text: "<div dir='rtl'><strong>مثال لصفحة إعلانية منبثقة:</strong> هذه الصورة توضّح نوعية النوافذ التي قد تُفتح. لا تضغط روابط داخلها ولا تثبّت أي برامج مقترحة؛ أغلقها عبر زر الإغلاق (×) أو إغلاق التبويب.</div>",
-        image: 'https://placehold.co/400x200/f1faee/e63946?text=Mega4Up+Popup+Example'
+        text: "<div dir='rtl'><strong>مثال لصفحة إعلانية منبثقة:</strong><br/>هذه الصورة توضّح نوعية النوافذ التي قد تُفتح. لا تضغط روابط داخلها ولا تثبّت أي برامج مقترحة؛ أغلقها عبر زر الإغلاق (×) أو إغلاق التبويب.</div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkgecU2zziVP71GHfVQRcHlYsQ2pqnmJ19GbsaIBmgg2OkC6PwKHdGDlf8kBt4aYWmjcz_Sm3bGWypyK8xYLm1ERIRCIOJ9oIU7aKj2v-d26JBP0xeGYOu8nYVYgL-iHMlTM4nzOEsHr9hEc8_1HB6P5VGONYCn1JWGdqZ0jID0jc9QGJQmJOR7PWwEekE/s1600/002.png'
       },
       {
-        text: "<div dir='rtl'><strong>الخطوة 2 — انتظر 30 ثانية وحلّ الكابتشا:</strong> بعد الضغط قد يظهر عدّ تنازلي (عادةً ~30 ثانية). أثناء العدّ تأكد من إغلاق أي نوافذ منبثقة. عندما ينتهي العدّ سيُطلب منك حلّ كابتشا (مثل reCAPTCHA أو اختيار صور). حل الكابتشا فقط داخل الصفحة الأصلية — إذا ظهر مربع كابتشا في نافذة جديدة أغلقها.</div>",
-        image: 'https://placehold.co/400x200/caffbf/1d3557?text=Mega4Up+Wait+Captcha'
+        text: "<div dir='rtl'><strong>الخطوة 2 — انتظر 30 ثانية وحلّ الكابتشا:</strong>بعد الضغط قد يظهر عدّ تنازلي (عادةً ~30 ثانية). أثناء العدّ تأكد من إغلاق أي نوافذ منبثقة. و في نفس الوقت سيُطلب منك حلّ كابتشا (مثل reCAPTCHA أو اختيار صور).<br/><strong> و اذا ظهرت نافذة مبثقة مثل السابق اغلقها مباشرة. </strong></div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8k_AOhcGmoAJKThkVN-maj-9KCmNtYhyYbctM7FGoC0m7m0G6QuK0IX7lkeRpQSMjV2DBMM5-eXeviUUbMGkx-nvtRDkZBFbP57BBBMisy1NoCMdgoDedXHsgH_yQi20Si4KN7Z2HLJeFlT2EtxFtdTGyuZvTBFP7rZI5g-3dstGr_JVPg2IqlzyKS6q5/s1600/003.png'
       },
       {
-        text: "<div dir='rtl'><strong>الخطوة 3 — اضغط زر الحصول على الرابط/التحميل:</strong> بعد حلّ الكابتشا سيظهر زر باسم مثل 'Get Link' أو 'Download' — اضغطه. أحيانًا تحتاج لإغلاق نوافذ منبثقة ثم إعادة الضغط لأن بعض الإعلانات تعيد فتح تبويبات. عندما يبدأ التحميل سيتولى المتصفح حفظ الملف تلقائيًا، أو قد يظهر مربع تأكيد الحفظ على الحاسوب/الهاتف — أكد الحفظ.</div>",
-        image: 'https://placehold.co/400x200/bdb2ff/1d3557?text=Mega4Up+Final+Download'
+        text: "<div dir='rtl'><strong>الخطوة 3 — اضغط زر Fet Download Link </strong>بعدها ممكن تفتح تبويبات اعلانية اغلاقها لأن بعض الإعلانات تعيد فتح تبويبات ثم اعد الضغط على الزر السابق حتى ترى التحميل بدأ.<br/>عندما يبدأ التحميل سيتولى المتصفح حفظ الملف تلقائيًا، أو قد يظهر مربع تأكيد الحفظ على الحاسوب/الهاتف — أكد الحفظ.</div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKNlJZl6T21ppQu3r5D9Ys_5LCvU3Z99-73v5Pf3UhvQ4_pfvyTZby5-NZ5xvghE5K7ZQ5uKbRFz8Gh0lCRS255tmmdeAlbeIFxsuBwEQb1jgQj2sw9VzsBn1zymUSzu9_jItDi5gb3WidQP7TeAwcyYM2G7wBD2U5hqPjNy6dIi9dN4UErL5T2dxFfQSd/s1600/004.png'
       },
       {
-        text: "<div dir='rtl'><strong>حالات فشل شائعة وحلول سريعة:</strong> إذا لم يبدأ التحميل جرّب: (1) الضغط بزر الماوس الأيمن على زر التحميل واختر 'حفظ الرابط باسم'، (2) فتح الصفحة في نافذة تصفح خاصة (Incognito) مع تعطيل الإضافات، أو (3) تجربة متصفح آخر. تجنّب تثبيت إضافات أو برامج وسيطة تقدمها الإعلانات.</div>",
-        image: 'https://placehold.co/400x120/e0fbfc/1d3557?text=Tip'
+        text: "<div dir='rtl'><strong>تجنّب تثبيت إضافات أو برامج وسيطة تقدمها الإعلانات.</strong></div>",
+        image: 'https://placehold.co/800x450/e0fbfc/1d3557?text=Tip'
       }
     ]
   },
@@ -31,20 +32,19 @@
   'UserDrive': {
     steps: [
       {
-        text: "<div dir='rtl'><strong>الخطوة 1 — اضغط زر التحميل:</strong> افتح صفحة الملف على UserDrive واضغط زر 'Download' أو 'Free Download'. كما في المواقع المشابهة قد تفتح نوافذ إعلانية؛ أغلقها فورًا وارجع إلى التبويب الأصلي.</div>",
-        image: 'https://placehold.co/400x200/e9ffe6/1d3557?text=UserDrive+Step+1'
+        text: "<div dir='rtl'><strong>الخطوة 1 :</strong><br/>انزل الى اخر الصفحة كما في الصروة و انتظر (العد التنازلي~ 10 ثواني) و بعدها قم بحل<strong> كابتشا كما في الصورة الموضحة </strong><br/>بعدها اضغط على <strong> Creat Download link </strong><br/>و ممكن تنفتح لك تبويبة او صفحة اعلانية و اغلقها و ارجعا دائما الى الصفحة التحميل الاولى.</div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggA9xC1H4WP-u_o2l6VnBzJoZDuCEEYJk2eZQBS9Kf_kbZHJI6gdxjCOySvhkrotghZqx3OAdN2i0YvpYed1ovkxMu-G1xKua7yw_vn5aG-8OSGL_-bywCmxrdclKTzlKqU-SxjISZvgx66PvdcSQwhnN0jH70zMMyw49DwsSoBJM6PqjpRK8yzDqPCtY9/s1600/002.png'
+      },
+         {
+        text: "<div dir='rtl'><strong>مثال لصفحة إعلانية منبثقة:</strong><br/>هذه الصورة توضّح نوعية النوافذ التي قد تُفتح. لا تضغط روابط داخلها ولا تثبّت أي برامج مقترحة؛ أغلقها عبر زر الإغلاق (×) أو إغلاق التبويب.</div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8nTflseuUyQ2uaC1nfpeE7xIL3aZFVGPlnnhXYgXeOW8rPLHgb9PDElyPW1Kft92d0zk2jxlM6odhyFcCT0pM6jUmh6khyphenhyphenHlJ2my5M_D6iX8lpel3Kka3UKluA0qNXM5PWo9QSeZxsnbK5GRkeqf1LhpwsVuCu1e57R_c7XOz0jwXGT8RTttK9thVgzim/s1600/003.png'
       },
       {
-        text: "<div dir='rtl'><strong>الخطوة 2 — انتظر ~10 ثوانٍ ثم حلّ الكابتشا:</strong> على UserDrive عادة يوجد عدّ صغير (حوالي 10 ثوانٍ). بعد انتهاء العدّ قد تحتاج للتمرير لأسفل للوصول إلى واجهة حل الكابتشا. حل الكابتشا داخل الصفحة الأصلية بعناية (اختيار الصور أو التحقق بـ'أنا لست روبوتًا').</div>",
-        image: 'https://placehold.co/400x200/fff3bf/1d3557?text=UserDrive+10s+Captcha'
+        text: "<div dir='rtl'><strong>الخطوة 2:</strong>بعدها سوف تتحول الى صفحة اخرى خاصة ببدأ التحميل — اضغط على زر 'Click To Download' ثم يبدأ التحميل مباشرة.</div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxdPEEawL6NRQo-NZI1AMApBg_0KUCxAvCeSr7TjEbkwjcyAhUH0gWv6P5-sIlpboyd-Vq6vb492mk3J7tNtlhWNIEgumGl7i_nZtwFvq5RseJ5OpH4ROCPe6LKxOYevEkRfZPuMuCR8GRIrVoXOnFSFU7POkXqwwuAf1KnFIuy-HEkczgvea9pe3KRfGs/s1600/004.PNG.png'
       },
-      {
-        text: "<div dir='rtl'><strong>الخطوة 3 — اضغط 'Create Download Link' ثم 'Click Download':</strong> بعد حلّ الكابتشا سيظهر زر 'Create Download Link' أو ما يماثله — اضغطه. قد يتحوّل الزر أو يظهر 'Click Download'؛ اضغطه وأكد الحفظ في متصفحك. إذا فُتح تبويب إعلاني أغلقه وعاود الضغط.</div>",
-        image: 'https://placehold.co/400x200/cfe0ff/1d3557?text=UserDrive+Create+Download+Link'
-      },
-      {
-        text: "<div dir='rtl'><strong>ملاحظة تقنية:</strong> إذا كان الزر معطلاً أو لا يستجيب فجرب تعطيل إضافات حجب الإعلانات مؤقتًا أو استخدم نافذة تصفّح خاصة. لا تقم بتثبيت أي برامج يطالبك بها الموقع؛ غالبًا تكون إعلانات مزيفة.</div>",
-        image: 'https://placehold.co/400x120/f0efeb/1d3557?text=Note'
+        {
+        text: "<div dir='rtl'><strong>تجنّب تثبيت إضافات أو برامج وسيطة تقدمها الإعلانات.</strong></div>",
       }
     ]
   },
@@ -52,16 +52,8 @@
   'MediaFire': {
     steps: [
       {
-        text: "<div dir='rtl'><strong>الخطوة 1 — اضغط على 'Download':</strong> في صفحة MediaFire اضغط زر 'Download' الظاهر عادةً بجانب اسم الملف. في معظم الحالات يبدأ التنزيل مباشرة أو يفتح مربع تأكيد الحفظ في المتصفح.</div>",
-        image: 'https://placehold.co/400x200/457b9d/1d3557?text=MediaFire+Step+1'
-      },
-      {
-        text: "<div dir='rtl'><strong>ملاحظة مهمة — أغلق أي نوافذ إعلانية:</strong> أحيانًا تفتح نوافذ إعلانية عند الضغط على الزر؛ أغلقها فورًا. عادة لا تحتاج إلى كابتشا على MediaFire، لكن المتصفح على الهاتف قد يطلب تأكيدًا لبدء التنزيل — اضغط سماح/موافق.</div>",
-        image: 'https://placehold.co/400x200/1d3557/a8dadc?text=MediaFire+Popup+Warning'
-      },
-      {
-        text: "<div dir='rtl'><strong>حلول عند تعذر التنزيل:</strong> إذا لم يبدأ الملف فجرّب النقر بزر الماوس الأيمن على زر 'Download' واختيار 'حفظ الرابط باسم'، أو تحقق من شريط التنزيل في المتصفح. على الهواتف تأكد من منح الإذن لتنزيل الملفات من المتصفح.</div>",
-        image: 'https://placehold.co/400x120/e9f5db/1d3557?text=Tip'
+        text: "<div dir='rtl'><strong>الخطوة 1 — اضغط على 'Download':</strong> في صفحة MediaFire اضغط زر 'Download' الظاهر عادةً بجانب اسم الملف. في معظم الحالات يبدأ التنزيل مباشرة.</div>",
+        image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPlPGsP_dKeTvD9onp5PJhtCaoMjT6cBbLdiwahpf7d5SFNW97vk3G69pU8nNuOC3wrkLMWBz-N9oLz3FfDjPgK6TRColirN4LUP1TdqrxCIC0Lr4jX_dFSZozmS4XVqRDqsz2RAgjGquMx7offzBOt8wTnpdXWa2CO7nd-3RwyTCTKiitpmdo8518NUG2/s1600/001.PNG.png'
       }
     ]
   }
@@ -171,15 +163,25 @@
         const linksModal = document.getElementById('eliteCard-links-modal');
         const versionSelector = document.getElementById('eliteCard-version-selector');
         versionSelector.innerHTML = '';
+
         const versions = Object.keys(eliteCard_allLinksData);
+        const latestVersionKey = versions.find(v => v.includes('(الأحدث)')) || versions[0];
+
         versions.forEach(version => {
             const option = document.createElement('option');
             option.value = version;
-            option.textContent = version;
+            if (version === latestVersionKey) {
+                option.innerHTML = `${version.replace('(الأحدث)', '').trim()} <span class="eliteCard-version-badge">الأحدث</span>`;
+                option.classList.add('eliteCard-latest-version');
+            } else {
+                option.textContent = version;
+            }
             versionSelector.appendChild(option);
         });
+        
+        versionSelector.value = latestVersionKey;
         versionSelector.onchange = () => eliteCard_displayVersionLinks(versionSelector.value);
-        eliteCard_displayVersionLinks(versions[0]);
+        eliteCard_displayVersionLinks(latestVersionKey);
         linksModal.style.display = 'block';
     }
 
@@ -194,7 +196,18 @@
             if (link.url && link.status === 'active') {
                 const a = document.createElement('a');
                 a.href = link.url;
-                a.textContent = link.name;
+                
+                const logoImg = document.createElement('img');
+                logoImg.src = link.logo || 'https://placehold.co/24x24/cccccc/ffffff?text=?';
+                logoImg.alt = '';
+                logoImg.className = 'eliteCard-source-logo';
+                
+                const textSpan = document.createElement('span');
+                textSpan.textContent = link.name;
+                
+                a.appendChild(logoImg);
+                a.appendChild(textSpan);
+
                 a.className = 'eliteCard-download-link-btn';
                 a.target = '_blank';
                 wrapper.appendChild(a);
@@ -206,8 +219,9 @@
                 wrapper.appendChild(copyBtn);
             } else {
                 const disabledDiv = document.createElement('div');
+                disabledDiv.dir = 'rtl';
                 disabledDiv.className = 'eliteCard-link-disabled';
-                disabledDiv.textContent = `${link.name} (غير متوفر)`;
+                disabledDiv.textContent = ` ${link.name} (غير متوفر)`;
                 wrapper.appendChild(disabledDiv);
             }
             linksContainer.appendChild(wrapper);
@@ -250,7 +264,7 @@
         const guide = eliteCard_howToGuides[sourceName];
         container.innerHTML = '';
         if (!guide) {
-            container.innerHTML = '<div>لا يوجد شرح متوفر لهذا المصدر حالياً.</div>';
+            container.innerHTML = '<div dir="rtl">لا يوجد شرح متوفر لهذا المصدر حالياً.</div>';
             return;
         }
         const ul = document.createElement('ul');
@@ -286,6 +300,33 @@
         setInterval(updateCounter, Math.random() * (4000 - 2000) + 2000);
     }
     
+     function eliteCard_updateTotalDownloads() {
+        const counterElement = document.getElementById('eliteCard-total-downloads-text');
+        if (!counterElement) return;
+
+        const launchDate = new Date('2025-09-23T00:00:00Z');
+        const baseDownloads = 19241; 
+        const today = new Date();
+        
+        const timeDiff = today.getTime() - launchDate.getTime();
+        const daysPassed = Math.max(0, Math.floor(timeDiff / (1000 * 3600 * 24)));
+
+        let totalDownloads = baseDownloads;
+
+        for (let i = 0; i < daysPassed; i++) {
+            const dailyIncrease = Math.floor(Math.random() * (999 - 100 + 1)) + 100;
+            totalDownloads += dailyIncrease;
+        }
+
+        if (totalDownloads > 1000000) {
+            counterElement.textContent = (totalDownloads / 1000000).toFixed(1) + 'M';
+        } else if (totalDownloads > 1000) {
+            counterElement.textContent = (totalDownloads / 1000).toFixed(1) + 'K';
+        } else {
+            counterElement.textContent = totalDownloads.toLocaleString('en-US');
+        }
+    }
+
     function eliteCard_updateTimestamp() {
         const timestampElement = document.getElementById('eliteCard-last-updated');
         const button = document.getElementById('eliteCard-main-btn');
@@ -295,15 +336,30 @@
         const updateDate = new Date(updateDateStr);
         const now = new Date();
         const diffSeconds = Math.floor((now - updateDate) / 1000);
-        if (diffSeconds < 0) { timestampElement.textContent = "قريباً"; return; }
+        if (diffSeconds < 0) {
+            timestampElement.textContent = "قريباً";
+            return;
+        }
         const diffMinutes = Math.floor(diffSeconds / 60);
         const diffHours = Math.floor(diffMinutes / 60);
         const diffDays = Math.floor(diffHours / 24);
-        if (diffMinutes < 1) { timestampElement.textContent = "الآن"; }
-        else if (diffMinutes < 60) { timestampElement.textContent = `منذ ${diffMinutes} دقيقة`; }
-        else if (diffHours < 24) { timestampElement.textContent = `منذ ${diffHours} ساعة`; }
-        else if (diffDays < 2) { timestampElement.textContent = 'منذ يوم'; }
-        else { timestampElement.textContent = updateDate.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' }); }
+
+        if (diffMinutes < 1) {
+            timestampElement.textContent = "الآن";
+        } else if (diffMinutes < 60) {
+            timestampElement.innerHTML = `منذ <span dir="ltr">${diffMinutes}</span> دقيقة`;
+        } else if (diffHours < 24) {
+            timestampElement.innerHTML = `منذ <span dir="ltr">${diffHours}</span> ساعة`;
+        } else if (diffDays === 1) {
+            timestampElement.textContent = 'منذ يوم';
+        } else if (diffDays <= 3) {
+            timestampElement.innerHTML = `منذ <span dir="rtl">${diffDays}</span> أيام`;
+        } else {
+            const day = updateDate.getDate();
+            const month = updateDate.toLocaleDateString('ar-EG', { month: 'long' });
+            const year = updateDate.getFullYear();
+            timestampElement.innerHTML = `<span dir="rtl">${day} - ${month} - ${year}</span>`;
+        }
     }
 
     function eliteCard_checkLinkStatus() {
@@ -338,9 +394,11 @@
             eliteCard_startActiveDownloadsCounter();
             eliteCard_updateTimestamp();
             eliteCard_checkLinkStatus();
+            eliteCard_updateTotalDownloads();
         });
     } else {
         eliteCard_startActiveDownloadsCounter();
         eliteCard_updateTimestamp();
         eliteCard_checkLinkStatus();
+        eliteCard_updateTotalDownloads();
     }
