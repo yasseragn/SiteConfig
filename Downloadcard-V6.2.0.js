@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         text: "<div dir='rtl'><strong>تجنّب تثبيت إضافات أو برامج وسيطة تقدمها الإعلانات.</strong></div>",
-        image: 'https://placehold.co/800x450/e0fbfc/1d3557?text=Tip'
+      
       }
     ]
   },
