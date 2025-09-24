@@ -1,9 +1,18 @@
-// Download Card V1.4.3  BY YASSERAGN www.yasseragn.com
-    
+// Elite Profit-Maximizer App Download Card v6.1 JS (Blogger Edition)  BY YASSERAGN www.yasseragn.com
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('eliteCardContainer_v6');
+    if (!container) {
+        console.error("Elite Card Container not found. Make sure the HTML part with id='eliteCardContainer_v6' exists on the page.");
+        return;
+    }
+
     let eliteCard_countdownInterval;
     let eliteCard_allLinksData;
     
     const eliteCard_howToGuides = {
+  const eliteCard_howToGuides = {
   'Mega4Up': {
     steps: [
       {
@@ -58,8 +67,11 @@
     ]
   }
 };
-    
-    function eliteCard_setTimer(duration, textElement, progressElement, onComplete) {
+
+    // Helper function to find elements within the container
+    const find = (selector) => container.querySelector(selector);
+
+    function setTimer(duration, textElement, progressElement, onComplete) {
         if (!textElement || !progressElement) return;
         let seconds = duration;
         const radius = progressElement.r.baseVal.value;
@@ -82,21 +94,21 @@
         eliteCard_countdownInterval = setInterval(updateTimer, 1000);
     }
 
-    function eliteCard_showAd(buttonElement) {
+    function showAd(buttonElement) {
         if (eliteCard_countdownInterval) clearInterval(eliteCard_countdownInterval);
 
         const linksData = buttonElement.getAttribute('data-links');
         try { eliteCard_allLinksData = JSON.parse(linksData); } catch (e) { console.error("Data error:", e); return; }
         
-        document.querySelector('.eliteCard-wrapper').classList.add('eliteCard-blurred');
-        document.getElementById('eliteCard-ad-overlay').style.display = 'flex';
-        document.getElementById('eliteCard-interstitial-ad-container').style.display = 'none';
-        document.getElementById('eliteCard-links-modal').style.display = 'none';
+        container.classList.add('eliteCard-blurred');
+        find('#eliteCard-ad-overlay').style.display = 'flex';
+        find('#eliteCard-interstitial-ad-container').style.display = 'none';
+        find('#eliteCard-links-modal').style.display = 'none';
         
-        const initialContainer = document.getElementById('eliteCard-initial-ad-container');
-        const nextStepBtn = document.getElementById('eliteCard-next-step-btn');
-        const timerText = document.getElementById('initial-timer-text');
-        const timerProgress = document.getElementById('initial-timer-progress');
+        const initialContainer = find('#eliteCard-initial-ad-container');
+        const nextStepBtn = find('#eliteCard-next-step-btn');
+        const timerText = find('#initial-timer-text');
+        const timerProgress = find('#initial-timer-progress');
         
         initialContainer.style.display = 'block';
         try {
@@ -106,7 +118,7 @@
         }
         nextStepBtn.style.display = 'none';
         
-        eliteCard_setTimer(20, timerText, timerProgress, () => {
+        setTimer(20, timerText, timerProgress, () => {
             const msgElement = initialContainer.querySelector('.eliteCard-timer-message');
             const timerWrapper = initialContainer.querySelector('.eliteCard-timer-wrapper');
             if (msgElement) msgElement.textContent = "شكراً لك! يمكنك المتابعة الآن.";
@@ -115,13 +127,13 @@
         });
     }
 
-    function eliteCard_showInterstitialAd() {
+    function showInterstitialAd() {
         if (eliteCard_countdownInterval) clearInterval(eliteCard_countdownInterval);
 
-        document.getElementById('eliteCard-initial-ad-container').style.display = 'none';
-        const interstitialContainer = document.getElementById('eliteCard-interstitial-ad-container');
-        const timerText = document.getElementById('interstitial-timer-text');
-        const timerProgress = document.getElementById('interstitial-timer-progress');
+        find('#eliteCard-initial-ad-container').style.display = 'none';
+        const interstitialContainer = find('#eliteCard-interstitial-ad-container');
+        const timerText = find('#interstitial-timer-text');
+        const timerProgress = find('#interstitial-timer-progress');
 
         interstitialContainer.style.display = 'block';
         try {
@@ -130,10 +142,10 @@
           console.error("AdSense Error:", e);
         }
 
-        eliteCard_setTimer(10, timerText, timerProgress, eliteCard_showLinks);
+        setTimer(10, timerText, timerProgress, showLinks);
     }
 
-    function eliteCard_copyLink(button, url) {
+    function copyLink(button, url) {
         const textArea = document.createElement("textarea");
         textArea.value = url;
         textArea.style.position = "fixed";
@@ -158,10 +170,10 @@
         document.body.removeChild(textArea);
     }
     
-    function eliteCard_showLinks() {
-        document.getElementById('eliteCard-interstitial-ad-container').style.display = 'none';
-        const linksModal = document.getElementById('eliteCard-links-modal');
-        const versionSelector = document.getElementById('eliteCard-version-selector');
+    function showLinks() {
+        find('#eliteCard-interstitial-ad-container').style.display = 'none';
+        const linksModal = find('#eliteCard-links-modal');
+        const versionSelector = find('#eliteCard-version-selector');
         versionSelector.innerHTML = '';
 
         const versions = Object.keys(eliteCard_allLinksData);
@@ -171,7 +183,7 @@
             const option = document.createElement('option');
             option.value = version;
             if (version === latestVersionKey) {
-                option.innerHTML = `${version.replace('(الأحدث)', '').trim()} <span class="eliteCard-version-badge">الأحدث</span>`;
+                option.textContent = `${version.replace('(الأحدث)', '').trim()} [⭐ الأحدث]`;
                 option.classList.add('eliteCard-latest-version');
             } else {
                 option.textContent = version;
@@ -180,13 +192,13 @@
         });
         
         versionSelector.value = latestVersionKey;
-        versionSelector.onchange = () => eliteCard_displayVersionLinks(versionSelector.value);
-        eliteCard_displayVersionLinks(latestVersionKey);
+        versionSelector.onchange = () => displayVersionLinks(versionSelector.value);
+        displayVersionLinks(latestVersionKey);
         linksModal.style.display = 'block';
     }
 
-    function eliteCard_displayVersionLinks(versionName) {
-        const linksContainer = document.getElementById('eliteCard-download-links-container');
+    function displayVersionLinks(versionName) {
+        const linksContainer = find('#eliteCard-download-links-container');
         linksContainer.innerHTML = '';
         const links = eliteCard_allLinksData[versionName];
         links.forEach(link => {
@@ -215,7 +227,7 @@
                 const copyBtn = document.createElement('button');
                 copyBtn.className = 'eliteCard-copy-link-btn';
                 copyBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zM-1 1.5A1.5 1.5 0 0 1 .5 0h3A1.5 1.5 0 0 1 5 1.5v1A1.5 1.5 0 0 1 3.5 4h-3A1.5 1.5 0 0 1-1 2.5v-1z"/></svg>';
-                copyBtn.onclick = () => eliteCard_copyLink(copyBtn, link.url);
+                copyBtn.onclick = () => copyLink(copyBtn, link.url);
                 wrapper.appendChild(copyBtn);
             } else {
                 const disabledDiv = document.createElement('div');
@@ -228,11 +240,11 @@
         });
     }
 
-    function eliteCard_closeOverlay() {
-        document.querySelector('.eliteCard-wrapper').classList.remove('eliteCard-blurred');
-        document.getElementById('eliteCard-ad-overlay').style.display = 'none';
+    function closeOverlay() {
+        find('.eliteCard-wrapper').classList.remove('eliteCard-blurred');
+        find('#eliteCard-ad-overlay').style.display = 'none';
         clearInterval(eliteCard_countdownInterval);
-        const initialContainer = document.getElementById('eliteCard-initial-ad-container');
+        const initialContainer = find('#eliteCard-initial-ad-container');
         if (initialContainer) {
             const timerWrapper = initialContainer.querySelector('.eliteCard-timer-wrapper');
             if (timerWrapper) {
@@ -241,10 +253,10 @@
         }
     }
 
-    function eliteCard_showHowTo() {
-        document.querySelector('.eliteCard-wrapper').classList.add('eliteCard-blurred');
-        const overlay = document.getElementById('eliteCard-howto-overlay');
-        const selector = document.getElementById('eliteCard-howto-source-selector');
+    function showHowTo() {
+        find('.eliteCard-wrapper').classList.add('eliteCard-blurred');
+        const overlay = find('#eliteCard-howto-overlay');
+        const selector = find('#eliteCard-howto-source-selector');
         selector.innerHTML = '';
         const availableSources = Object.keys(eliteCard_howToGuides);
         availableSources.forEach(sourceName => {
@@ -253,14 +265,14 @@
             option.textContent = sourceName;
             selector.appendChild(option);
         });
-        selector.onchange = () => eliteCard_displayHowToSteps(selector.value);
+        selector.onchange = () => displayHowToSteps(selector.value);
         if (availableSources.length > 0) {
-            eliteCard_displayHowToSteps(availableSources[0]);
+            displayHowToSteps(availableSources[0]);
         }
         overlay.style.display = 'flex';
     }
-    function eliteCard_displayHowToSteps(sourceName) {
-        const container = document.getElementById('eliteCard-howto-steps-container');
+    function displayHowToSteps(sourceName) {
+        const container = find('#eliteCard-howto-steps-container');
         const guide = eliteCard_howToGuides[sourceName];
         container.innerHTML = '';
         if (!guide) {
@@ -281,13 +293,13 @@
         });
         container.appendChild(ul);
     }
-    function eliteCard_closeHowTo() {
-        document.querySelector('.eliteCard-wrapper').classList.remove('eliteCard-blurred');
-        document.getElementById('eliteCard-howto-overlay').style.display = 'none';
+    function closeHowTo() {
+        find('.eliteCard-wrapper').classList.remove('eliteCard-blurred');
+        find('#eliteCard-howto-overlay').style.display = 'none';
     }
     
-    function eliteCard_startActiveDownloadsCounter() {
-        const counterElement = document.getElementById('eliteCard-active-downloads-text');
+    function startActiveDownloadsCounter() {
+        const counterElement = find('#eliteCard-active-downloads-text');
         if (!counterElement) return;
         let baseDownloads = 180;
         const updateCounter = () => {
@@ -300,12 +312,12 @@
         setInterval(updateCounter, Math.random() * (4000 - 2000) + 2000);
     }
     
-     function eliteCard_updateTotalDownloads() {
-        const counterElement = document.getElementById('eliteCard-total-downloads-text');
+     function updateTotalDownloads() {
+        const counterElement = find('#eliteCard-total-downloads-text');
         if (!counterElement) return;
 
         const launchDate = new Date('2025-09-23T00:00:00Z');
-        const baseDownloads = 19241; 
+        const baseDownloads = 191500; 
         const today = new Date();
         
         const timeDiff = today.getTime() - launchDate.getTime();
@@ -327,9 +339,9 @@
         }
     }
 
-    function eliteCard_updateTimestamp() {
-        const timestampElement = document.getElementById('eliteCard-last-updated');
-        const button = document.getElementById('eliteCard-main-btn');
+    function updateTimestamp() {
+        const timestampElement = find('#eliteCard-last-updated');
+        const button = find('#eliteCard-main-btn');
         if (!timestampElement || !button) return;
         const updateDateStr = button.getAttribute('data-last-update');
         if (!updateDateStr) return;
@@ -355,18 +367,18 @@
         } else if (diffDays <= 3) {
             timestampElement.innerHTML = `منذ <span dir="rtl">${diffDays}</span> أيام`;
         } else {
-            const day = updateDate.getDate();
+            const day = updateDate.toLocaleDateString('en-US', { day: 'numeric' });
             const month = updateDate.toLocaleDateString('ar-EG', { month: 'long' });
-            const year = updateDate.getFullYear();
-            timestampElement.innerHTML = `<span dir="rtl">${day} - ${month} - ${year}</span>`;
+            const year = updateDate.toLocaleDateString('en-US', { year: 'numeric' });
+            timestampElement.innerHTML = `<span dir="ltr">${day} - ${month} - ${year}</span>`;
         }
     }
 
-    function eliteCard_checkLinkStatus() {
-        const button = document.getElementById('eliteCard-main-btn');
+    function checkLinkStatus() {
+        const button = find('#eliteCard-main-btn');
         if (!button) return;
-        const notifier = document.getElementById('eliteCard-link-notifier');
-        const notifierText = document.getElementById('eliteCard-notifier-text');
+        const notifier = find('#eliteCard-link-notifier');
+        const notifierText = find('#eliteCard-notifier-text');
         if (!notifier || !notifierText) return;
         const linksDataStr = button.getAttribute('data-links');
         if (!linksDataStr) return;
@@ -388,17 +400,19 @@
         }
     }
 
-    // Run functions only after the DOM is fully loaded
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            eliteCard_startActiveDownloadsCounter();
-            eliteCard_updateTimestamp();
-            eliteCard_checkLinkStatus();
-            eliteCard_updateTotalDownloads();
-        });
-    } else {
-        eliteCard_startActiveDownloadsCounter();
-        eliteCard_updateTimestamp();
-        eliteCard_checkLinkStatus();
-        eliteCard_updateTotalDownloads();
-    }
+    // Attach event listeners programmatically
+    find('.eliteCard-howto-link button').onclick = showHowTo;
+    find('#eliteCard-main-btn').onclick = function() { showAd(this); };
+    find('#eliteCard-next-step-btn').onclick = showInterstitialAd;
+    find('#eliteCard-close-links-btn').onclick = closeOverlay;
+    find('#eliteCard-close-howto-btn').onclick = closeHowTo;
+    find('#eliteCard-notifier-close').onclick = function() { this.parentElement.style.display = 'none'; };
+
+
+    // Initialize dynamic components
+    startActiveDownloadsCounter();
+    updateTimestamp();
+    checkLinkStatus();
+    updateTotalDownloads();
+});
+
