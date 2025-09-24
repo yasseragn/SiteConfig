@@ -208,15 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const a = document.createElement('a');
                 a.href = link.url;
                 
-                const logoImg = document.createElement('img');
-                logoImg.src = link.logo || 'https://placehold.co/24x24/cccccc/ffffff?text=?';
-                logoImg.alt = '';
-                logoImg.className = 'eliteCard-source-logo';
-                
+               
                 const textSpan = document.createElement('span');
                 textSpan.textContent = link.name;
                 
-                a.appendChild(logoImg);
+            
                 a.appendChild(textSpan);
 
                 a.className = 'eliteCard-download-link-btn';
