@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let eliteCard_countdownInterval;
     let eliteCard_allLinksData;
     
-    const eliteCard_howToGuides = {
   const eliteCard_howToGuides = {
   'Mega4Up': {
     steps: [
