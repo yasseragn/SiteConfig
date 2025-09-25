@@ -1,4 +1,4 @@
-// Elite Profit-Maximizer App Download Card v6.1.2 JS (Blogger Edition)
+// Elite Profit-Maximizer App Download Card v6.1.3 JS (Blogger Edition)
 // Author: YASSERAGN www.yasseragn.com
 
 
@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const day = updateDate.toLocaleDateString('en-US', { day: 'numeric' });
             const month = updateDate.toLocaleDateString('ar-EG', { month: 'long' });
             const year = updateDate.toLocaleDateString('en-US', { year: 'numeric' });
-            timestampElement.innerHTML = `<span dir="ltr">${day} - ${month} - ${year}</span>`;
+            timestampElement.innerHTML = `<span dir="rtl">${day} - ${month} - ${year}</span>`;
         }
     }
 
