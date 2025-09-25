@@ -1,7 +1,6 @@
 // Elite Profit-Maximizer App Download Card v6.2 JS (Blogger Edition)  BY YASSERAGN www.yasseragn.com
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('eliteCardContainer_v6');
     if (!container) {
@@ -13,9 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let eliteCard_allLinksData;
     
     const eliteCard_howToGuides = {
-  'DevUpload': {
-    steps: []},
-
   'Mega4Up': {
      'Mega4Up': {
     steps: [
