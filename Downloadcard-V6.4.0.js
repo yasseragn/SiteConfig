@@ -1,4 +1,5 @@
-// Elite Profit-Maximizer App Download Card v6.1 JS (Blogger Edition)  BY YASSERAGN www.yasseragn.com
+// Elite Profit-Maximizer App Download Card v6.2 JS (Blogger Edition)  BY YASSERAGN www.yasseragn.com
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,8 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let eliteCard_countdownInterval;
     let eliteCard_allLinksData;
     
-  const eliteCard_howToGuides = {
+    const eliteCard_howToGuides = {
+  'DevUpload': {
+    steps: []},
+
   'Mega4Up': {
+     'Mega4Up': {
     steps: [
       {
         text: "<div dir='rtl'><strong>الخطوة 1 : </strong><br/>عندما تفتح صفحة التحميل سوف تجد <strong> كلمة Free Download </strong>  اضغط عليها و غالبا سوف تفتح تبويبات او نوافذ اعلانية تلقائيا  <br/><strong> لا تتفاعل مع اي اعلان و أغلق النافذة/التبويب المنبثق فورًا وعد إلى التبويب الأصلي حيث صفحة التحميل  Mega4Up </strong> </div>",
@@ -191,7 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         versionSelector.value = latestVersionKey;
-        versionSelector.onchange = () => displayVersionLinks(versionSelector.value);
+        versionSelector.onchange = () => {
+            displayVersionLinks(versionSelector.value);
+            displayChangelog(versionSelector.value);
+        }
         displayVersionLinks(latestVersionKey);
         linksModal.style.display = 'block';
     }
@@ -199,8 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayVersionLinks(versionName) {
         const linksContainer = find('#eliteCard-download-links-container');
         linksContainer.innerHTML = '';
-        const links = eliteCard_allLinksData[versionName];
-        links.forEach(link => {
+        const versionData = eliteCard_allLinksData[versionName];
+        if (!versionData || !versionData.links) return;
+
+        versionData.links.forEach(link => {
             const wrapper = document.createElement('div');
             wrapper.className = 'eliteCard-link-wrapper';
             
@@ -208,11 +218,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const a = document.createElement('a');
                 a.href = link.url;
                 
-               
+                const logoImg = document.createElement('img');
+                logoImg.src = link.logo || 'https://placehold.co/24x24/cccccc/ffffff?text=?';
+                logoImg.alt = '';
+                logoImg.className = 'eliteCard-source-logo';
+                
                 const textSpan = document.createElement('span');
                 textSpan.textContent = link.name;
                 
-            
+                a.appendChild(logoImg);
                 a.appendChild(textSpan);
 
                 a.className = 'eliteCard-download-link-btn';
@@ -236,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeOverlay() {
-        find('.eliteCard-wrapper').classList.remove('eliteCard-blurred');
+        container.classList.remove('eliteCard-blurred');
         find('#eliteCard-ad-overlay').style.display = 'none';
         clearInterval(eliteCard_countdownInterval);
         const initialContainer = find('#eliteCard-initial-ad-container');
@@ -249,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showHowTo() {
-        find('.eliteCard-wrapper').classList.add('eliteCard-blurred');
+        container.classList.add('eliteCard-blurred');
         const overlay = find('#eliteCard-howto-overlay');
         const selector = find('#eliteCard-howto-source-selector');
         selector.innerHTML = '';
@@ -289,8 +303,32 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(ul);
     }
     function closeHowTo() {
-        find('.eliteCard-wrapper').classList.remove('eliteCard-blurred');
+        container.classList.remove('eliteCard-blurred');
         find('#eliteCard-howto-overlay').style.display = 'none';
+    }
+
+    function displayChangelog(versionName) {
+        const changelogBox = find('#eliteCard-changelog-box');
+        const versionData = eliteCard_allLinksData[versionName];
+        if (!changelogBox || !versionData || !versionData.changelog || versionData.changelog.length === 0) {
+            changelogBox.innerHTML = '';
+            changelogBox.style.display = 'none';
+            return;
+        }
+
+        changelogBox.classList.add('fade-out');
+        
+        setTimeout(() => {
+            let html = `<div class="changelog-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm3.29 12.29L12 11.17l-3.29 3.12a.996.996 0 11-1.41-1.41l3.29-3.12-3.29-3.12a.996.996 0 111.41-1.41L12 8.34l3.29-3.12a.996.996 0 111.41 1.41L13.41 9.75l3.29 3.12c.39.39.39 1.02 0 1.41s-1.03.39-1.41 0z"/></svg>ما الجديد في هذا الإصدار؟</div>`;
+            html += '<ul class="changelog-list">';
+            versionData.changelog.forEach(item => {
+                html += `<li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>${item}</li>`;
+            });
+            html += '</ul>';
+            changelogBox.innerHTML = html;
+            changelogBox.style.display = 'block';
+            changelogBox.classList.remove('fade-out');
+        }, 400);
     }
     
     function startActiveDownloadsCounter() {
@@ -360,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (diffDays === 1) {
             timestampElement.textContent = 'منذ يوم';
         } else if (diffDays <= 3) {
-            timestampElement.innerHTML = `منذ <span dir="rtl">${diffDays}</span> أيام`;
+            timestampElement.innerHTML = `منذ <span dir="ltr">${diffDays}</span> أيام`;
         } else {
             const day = updateDate.toLocaleDateString('en-US', { day: 'numeric' });
             const month = updateDate.toLocaleDateString('ar-EG', { month: 'long' });
@@ -380,14 +418,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const linksData = JSON.parse(linksDataStr);
         let unavailableSources = [];
         for (const version in linksData) {
-            linksData[version].forEach(link => {
-                if (!link.url || link.status === 'inactive') {
-                    const sourceName = link.name.split(' ').pop();
-                    if (!unavailableSources.includes(sourceName)) {
-                        unavailableSources.push(sourceName);
+            if (linksData[version].links) {
+                linksData[version].links.forEach(link => {
+                    if (!link.url || link.status === 'inactive') {
+                        const sourceName = link.name.split(' ').pop();
+                        if (!unavailableSources.includes(sourceName)) {
+                            unavailableSources.push(sourceName);
+                        }
                     }
-                }
-            });
+                });
+            }
         }
         if (unavailableSources.length > 0) {
             notifierText.textContent = `سيتم تحديث الروابط قريباً للمصادر: ${unavailableSources.join('، ')}`;
@@ -395,19 +435,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Attach event listeners programmatically
-    find('.eliteCard-howto-link button').onclick = showHowTo;
-    find('#eliteCard-main-btn').onclick = function() { showAd(this); };
-    find('#eliteCard-next-step-btn').onclick = showInterstitialAd;
-    find('#eliteCard-close-links-btn').onclick = closeOverlay;
-    find('#eliteCard-close-howto-btn').onclick = closeHowTo;
-    find('#eliteCard-notifier-close').onclick = function() { this.parentElement.style.display = 'none'; };
+    function initializeCard() {
+        const mainBtn = find('#eliteCard-main-btn');
+        if (!mainBtn) return;
+        
+        const linksDataStr = mainBtn.getAttribute('data-links');
+        try {
+            const data = JSON.parse(linksDataStr);
+            const versions = Object.keys(data);
+            const latestVersion = versions.find(v => v.includes('(الأحدث)')) || versions[0];
+            displayChangelog(latestVersion);
+        } catch (e) {
+            console.error("Initial data parse error:", e);
+        }
 
+        // Attach event listeners programmatically
+        find('.eliteCard-howto-link button').onclick = showHowTo;
+        mainBtn.onclick = function() { showAd(this); };
+        find('#eliteCard-next-step-btn').onclick = showInterstitialAd;
+        find('#eliteCard-close-links-btn').onclick = closeOverlay;
+        find('#eliteCard-close-howto-btn').onclick = closeHowTo;
+        find('#eliteCard-notifier-close').onclick = function() { this.parentElement.style.display = 'none'; };
 
-    // Initialize dynamic components
-    startActiveDownloadsCounter();
-    updateTimestamp();
-    checkLinkStatus();
-    updateTotalDownloads();
+        // Initialize dynamic components
+        startActiveDownloadsCounter();
+        updateTimestamp();
+        checkLinkStatus();
+        updateTotalDownloads();
+    }
+
+    initializeCard();
 });
 
