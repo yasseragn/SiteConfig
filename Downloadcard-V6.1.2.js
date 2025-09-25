@@ -1,5 +1,6 @@
-// Elite Profit-Maximizer App Download Card v6.1.1 JS (Blogger Edition)
+// Elite Profit-Maximizer App Download Card v6.1.2 JS (Blogger Edition)
 // Author: YASSERAGN www.yasseragn.com
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('eliteCardContainer_v6');
@@ -66,8 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   }
 };
-
-
     // Helper function to find elements within the container
     const find = (selector) => container.querySelector(selector);
 
@@ -211,7 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const a = document.createElement('a');
                 a.href = link.url;
                 
-              
+                const logoImg = document.createElement('img');
+                logoImg.src = link.logo || 'https://placehold.co/24x24/cccccc/ffffff?text=?';
+                logoImg.alt = '';
+                logoImg.className = 'eliteCard-source-logo';
                 
                 const textSpan = document.createElement('span');
                 textSpan.textContent = link.name;
@@ -333,10 +335,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
      function updateTotalDownloads() {
         const counterElement = find('#eliteCard-total-downloads-text');
-        if (!counterElement) return;
+        const button = find('#eliteCard-main-btn');
+        if (!counterElement || !button) return;
 
-        const launchDate = new Date('2025-09-23T00:00:00Z');
-        const baseDownloads = 191500; 
+        const launchDateStr = button.getAttribute('data-launch-date') || new Date().toISOString();
+        const baseDownloadsStr = button.getAttribute('data-base-downloads') || '0';
+
+        const launchDate = new Date(launchDateStr);
+        const baseDownloads = parseInt(baseDownloadsStr, 10);
         const today = new Date();
         
         const timeDiff = today.getTime() - launchDate.getTime();
@@ -453,5 +459,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializeCard();
 });
+
 
 
