@@ -1,4 +1,4 @@
-// Elite Profit-Maximizer App Download Card v6.1.4 JS (Blogger Edition)
+// Elite Profit-Maximizer App Download Card v6.1.5 JS (Blogger Edition)
 // Author: YASSERAGN www.yasseragn.com
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let eliteCard_allLinksData;
     
     const eliteCard_howToGuides = {
-      'Mega4Up': {
+  'Mega4Up': {
     steps: [
       {
         text: "<div dir='rtl'><strong>الخطوة 1 : </strong><br/>عندما تفتح صفحة التحميل سوف تجد <strong> كلمة Free Download </strong>  اضغط عليها و غالبا سوف تفتح تبويبات او نوافذ اعلانية تلقائيا  <br/><strong> لا تتفاعل مع اي اعلان و أغلق النافذة/التبويب المنبثق فورًا وعد إلى التبويب الأصلي حيث صفحة التحميل  Mega4Up </strong> </div>",
@@ -210,11 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const a = document.createElement('a');
                 a.href = link.url;
                 
-                const logoImg = document.createElement('img');
-                logoImg.src = link.logo || 'https://placehold.co/24x24/cccccc/ffffff?text=?';
-                logoImg.alt = '';
-                logoImg.className = 'eliteCard-source-logo';
-                
                 const textSpan = document.createElement('span');
                 textSpan.textContent = link.name;
                 
@@ -322,15 +317,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function startActiveDownloadsCounter() {
         const counterElement = find('#eliteCard-active-downloads-text');
         if (!counterElement) return;
-        let baseDownloads = 180;
+        
         const updateCounter = () => {
-            const fluctuation = Math.floor(Math.random() * 91) - 45;
-            let currentDownloads = baseDownloads + fluctuation;
-            if (currentDownloads < 50) currentDownloads = 50;
-            counterElement.textContent = currentDownloads.toLocaleString('en-US');
+            const activeDownloads = Math.floor(Math.random() * (250 - 30 + 1)) + 30;
+            counterElement.textContent = activeDownloads.toLocaleString('en-US');
+            const nextUpdateIn = Math.random() * (7000 - 3000) + 3000;
+            setTimeout(updateCounter, nextUpdateIn);
         };
         updateCounter(); 
-        setInterval(updateCounter, Math.random() * (4000 - 2000) + 2000);
     }
     
      function updateTotalDownloads() {
@@ -338,8 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const button = find('#eliteCard-main-btn');
         if (!counterElement || !button) return;
 
-        const launchDateStr = button.getAttribute('data-launch-date') || new Date().toISOString();
-        const baseDownloadsStr = button.getAttribute('data-base-downloads') || '0';
+        const launchDateStr = button.getAttribute('data-launch-date');
+        const baseDownloadsStr = button.getAttribute('data-base-downloads');
+        if (!launchDateStr || !baseDownloadsStr) return;
 
         const launchDate = new Date(launchDateStr);
         const baseDownloads = parseInt(baseDownloadsStr, 10);
