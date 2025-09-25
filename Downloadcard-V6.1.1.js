@@ -1,4 +1,5 @@
-// Elite Profit-Maximizer App Download Card v6.9 JS (Blogger Edition)  BY YASSERAGN www.yasseragn.com
+// Elite Profit-Maximizer App Download Card v6.1.1 JS (Blogger Edition)
+// Author: YASSERAGN www.yasseragn.com
 
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('eliteCardContainer_v6');
@@ -191,10 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         versionSelector.value = latestVersionKey;
-        versionSelector.onchange = () => {
-            displayVersionLinks(versionSelector.value);
-            displayChangelog(versionSelector.value);
-        }
+        versionSelector.onchange = () => displayVersionLinks(versionSelector.value);
         displayVersionLinks(latestVersionKey);
         linksModal.style.display = 'block';
     }
@@ -213,15 +211,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const a = document.createElement('a');
                 a.href = link.url;
                 
-                const logoImg = document.createElement('img');
-                logoImg.src = link.logo || 'https://placehold.co/24x24/cccccc/ffffff?text=?';
-                logoImg.alt = '';
-                logoImg.className = 'eliteCard-source-logo';
+              
                 
                 const textSpan = document.createElement('span');
                 textSpan.textContent = link.name;
                 
-                a.appendChild(logoImg);
                 a.appendChild(textSpan);
 
                 a.className = 'eliteCard-download-link-btn';
@@ -312,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return;
         }
-
+        
         let html = `<div class="changelog-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm3.29 12.29L12 11.17l-3.29 3.12a.996.996 0 11-1.41-1.41l3.29-3.12-3.29-3.12a.996.996 0 111.41-1.41L12 8.34l3.29-3.12a.996.996 0 111.41 1.41L13.41 9.75l3.29 3.12c.39.39.39 1.02 0 1.41s-1.03.39-1.41 0z"/></svg>ما الجديد في هذا الإصدار؟</div>`;
         html += '<ul class="changelog-list">';
         versionData.changelog.forEach(item => {
