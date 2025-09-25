@@ -1,4 +1,4 @@
-// Elite Profit-Maximizer App Download Card v6.7 JS (Blogger Edition)  BY YASSERAGN www.yasseragn.com
+// Elite Profit-Maximizer App Download Card v6.9 JS (Blogger Edition)  BY YASSERAGN www.yasseragn.com
 
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('eliteCardContainer_v6');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let eliteCard_allLinksData;
     
     const eliteCard_howToGuides = {
-   'Mega4Up': {
+  'Mega4Up': {
     steps: [
       {
         text: "<div dir='rtl'><strong>الخطوة 1 : </strong><br/>عندما تفتح صفحة التحميل سوف تجد <strong> كلمة Free Download </strong>  اضغط عليها و غالبا سوف تفتح تبويبات او نوافذ اعلانية تلقائيا  <br/><strong> لا تتفاعل مع اي اعلان و أغلق النافذة/التبويب المنبثق فورًا وعد إلى التبويب الأصلي حيث صفحة التحميل  Mega4Up </strong> </div>",
@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   }
 };
+
 
     // Helper function to find elements within the container
     const find = (selector) => container.querySelector(selector);
@@ -305,24 +306,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const changelogBox = find('#eliteCard-changelog-box');
         const versionData = eliteCard_allLinksData[versionName];
         if (!changelogBox || !versionData || !versionData.changelog || versionData.changelog.length === 0) {
-            changelogBox.innerHTML = '';
-            changelogBox.style.display = 'none';
+            if(changelogBox) {
+                changelogBox.innerHTML = '';
+                changelogBox.style.display = 'none';
+            }
             return;
         }
 
-        changelogBox.classList.add('fade-out');
-        
-        setTimeout(() => {
-            let html = `<div class="changelog-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm3.29 12.29L12 11.17l-3.29 3.12a.996.996 0 11-1.41-1.41l3.29-3.12-3.29-3.12a.996.996 0 111.41-1.41L12 8.34l3.29-3.12a.996.996 0 111.41 1.41L13.41 9.75l3.29 3.12c.39.39.39 1.02 0 1.41s-1.03.39-1.41 0z"/></svg>ما الجديد في هذا الإصدار؟</div>`;
-            html += '<ul class="changelog-list">';
-            versionData.changelog.forEach(item => {
-                html += `<li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>${item}</li>`;
-            });
-            html += '</ul>';
-            changelogBox.innerHTML = html;
-            changelogBox.style.display = 'block';
-            changelogBox.classList.remove('fade-out');
-        }, 400);
+        let html = `<div class="changelog-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm3.29 12.29L12 11.17l-3.29 3.12a.996.996 0 11-1.41-1.41l3.29-3.12-3.29-3.12a.996.996 0 111.41-1.41L12 8.34l3.29-3.12a.996.996 0 111.41 1.41L13.41 9.75l3.29 3.12c.39.39.39 1.02 0 1.41s-1.03.39-1.41 0z"/></svg>ما الجديد في هذا الإصدار؟</div>`;
+        html += '<ul class="changelog-list">';
+        versionData.changelog.forEach(item => {
+            html += `<li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>${item}</li>`;
+        });
+        html += '</ul>';
+        changelogBox.innerHTML = html;
+        changelogBox.style.display = 'block';
     }
     
     function startActiveDownloadsCounter() {
@@ -436,6 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const linksDataStr = mainBtn.getAttribute('data-links');
         try {
             const data = JSON.parse(linksDataStr);
+            eliteCard_allLinksData = data; // Store for later use
             const versions = Object.keys(data);
             const latestVersion = versions.find(v => v.includes('(الأحدث)')) || versions[0];
             displayChangelog(latestVersion);
