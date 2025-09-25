@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let eliteCard_allLinksData;
     
     const eliteCard_howToGuides = {
-     'Mega4Up': {
+   'Mega4Up': {
     steps: [
       {
         text: "<div dir='rtl'><strong>الخطوة 1 : </strong><br/>عندما تفتح صفحة التحميل سوف تجد <strong> كلمة Free Download </strong>  اضغط عليها و غالبا سوف تفتح تبويبات او نوافذ اعلانية تلقائيا  <br/><strong> لا تتفاعل مع اي اعلان و أغلق النافذة/التبويب المنبثق فورًا وعد إلى التبويب الأصلي حيث صفحة التحميل  Mega4Up </strong> </div>",
@@ -460,4 +460,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initializeCard();
 });
+
 
